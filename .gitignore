@@ -1,0 +1,6 @@
+#受講生が自身のAPIキーや vendor ディレクトリ、ローカル設定ファイルを誤ってGit管理対象・公開コミットに含めないよう設定します。
+/vendor/
+.env
+.DS_Store
+.vscode/
+*.log

@@ -1,5 +1,5 @@
 {
-    "name": "supabase-php-web-app",
+    "name": "hosokawa/supabase-php-web-app",
     "require": {
         "php": "^8.2",
         "ext-pdo_pgsql": "*",

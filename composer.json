@@ -1,15 +1,8 @@
 {
-    "name": "teacher/supabase-php-sample",
-    "description": "Supabase x PHP 授業用サンプルリポジトリ",
-    "type": "project",
+    "name": "supabase-php-web-app",
     "require": {
-        "php": ">=8.0",
-        "rafaelwendel/phpsupabase": "^0.0.12",
+        "php": "^8.2",
+        "ext-pdo_pgsql": "*",
         "vlucas/phpdotenv": "^5.5"
-    },
-    "autoload": {
-        "psr-4": {
-            "App\\": "src/"
-        }
     }
 }

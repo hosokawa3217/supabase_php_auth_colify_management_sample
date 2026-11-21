@@ -1,8 +1,10 @@
-Supabase を　PHP で制御するサンプルコード
+ Supabase を　PHP で制御するサンプルコード
+をcoolifyにデブロイできるようにする。
 
 
 1. プロジェクトのディレクトリ構造作成
 ルートディレクトリを作成し、役割ごとのフォルダを準備します。
+``` bash
 supabase-php-sample/
 ├── .env.example        # 環境変数のテンプレート（GitHubへコミット）
 ├── .gitignore          # コミット除外設定
@@ -19,4 +21,4 @@ supabase-php-sample/
     ├── login.php
     ├── logout.php
     └── index.php
-
+```

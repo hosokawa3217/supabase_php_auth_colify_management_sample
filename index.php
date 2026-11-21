@@ -1,3 +1,6 @@
+# 1. ローカルの index.php の見出し等を編集して保存
+# 例: <h1>TODO管理アプリ（自動デプロイ確認済み）</h1>
+
 <?php
 // 環境変数からSupabase接続情報を取得
 $host = getenv('DB_HOST') ?: 'aws-0-ap-northeast-1.pooler.supabase.com';

@@ -1,8 +1,6 @@
-// 共通接続モジュールの作成
-// .env ファイルから接続情報を自動取得し、Supabaseクライアント（PHPSupabase\Service）のインスタンスを生成する共通処理
-
-
 <?php
+// 共通接続モジュール
+// .env ファイルから接続情報を自動取得し、Supabaseクライアント（PHPSupabase\Service）のインスタンスを生成する共通処理
 
 require_once __DIR__ . '/../vendor/autoload.php';
 

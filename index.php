@@ -23,11 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  
     if ($action === 'create' && !empty(trim($_POST['title'] ?? ''))) {
         // C: 追加 (Insert)
-        $stmt = $pdo->prepare("INSERT INTO todos (title) VALUES (:title)");
+        $stmt = $pdo->prepare("INSERT INTO todos (title, is_complete) VALUES (:title, false)");
         $stmt->execute([':title' => trim($_POST['title'])]);
     } elseif ($action === 'toggle' && isset($_POST['id'])) {
         // U: 完了状態切り替え (Update)
-        $stmt = $pdo->prepare("UPDATE todos SET is_completed = NOT is_completed WHERE id = :id");
+        $stmt = $pdo->prepare("UPDATE todos SET is_complete = NOT is_complete WHERE id = :id");
         $stmt->execute([':id' => (int)$_POST['id']]);
     } elseif ($action === 'delete' && isset($_POST['id'])) {
         // D: 削除 (Delete)
@@ -78,7 +78,7 @@ $todos = $pdo->query("SELECT * FROM todos ORDER BY created_at DESC")->fetchAll()
         <ul>
             <?php foreach ($todos as $todo): ?>
                 <li>
-                    <span class="<?= $todo['is_completed'] ? 'completed' : '' ?>">
+                    <span class="<?= $todo['is_complete'] ? 'completed' : '' ?>">
                         <?= htmlspecialchars($todo['title'], ENT_QUOTES, 'UTF-8') ?>
                     </span>
                     <div class="actions">
@@ -86,7 +86,7 @@ $todos = $pdo->query("SELECT * FROM todos ORDER BY created_at DESC")->fetchAll()
                         <form method="POST" style="margin:0;">
                             <input type="hidden" name="action" value="toggle">
                             <input type="hidden" name="id" value="<?= $todo['id'] ?>">
-                            <button type="submit" class="btn-toggle"><?= $todo['is_completed'] ? '戻す' : '完了' ?></button>
+                            <button type="submit" class="btn-toggle"><?= $todo['is_complete'] ? '戻す' : '完了' ?></button>
                         </form>
                         <!-- 削除ボタン (Delete) -->
                         <form method="POST" style="margin:0;">

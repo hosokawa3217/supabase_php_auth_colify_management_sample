@@ -3,6 +3,7 @@
     "require": {
         "php": "^8.2",
         "ext-pdo_pgsql": "*",
-        "vlucas/phpdotenv": "^5.5"
+        "vlucas/phpdotenv": "^5.5",
+        "rafaelwendel/phpsupabase": "^0.0.12"
     }
 }
